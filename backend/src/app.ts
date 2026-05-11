@@ -10,11 +10,19 @@ import { notFoundHandler } from "./shared/http/notFoundHandler.js";
 import { authRoutes } from "./users/routes.js";
 
 export const app = express();
+const allowedOrigins = env.FRONTEND_ORIGIN.split(",").map((origin) => origin.trim());
 
 app.use(helmet());
 app.use(
   cors({
-    origin: env.FRONTEND_ORIGIN,
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+        return;
+      }
+
+      callback(new Error("Origin is not allowed by CORS"));
+    },
     credentials: false
   })
 );
