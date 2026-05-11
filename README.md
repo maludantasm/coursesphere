@@ -41,7 +41,7 @@ CourseSphere é uma aplicação full stack para gestão colaborativa de cursos o
 - Página de perfil com dados da sessão autenticada, resumo de cursos/aulas e atividade recente
 - Tela de detalhe do curso com dados do curso, instrutor convidado, aulas, criação/edição/exclusão de aulas e ações do curso
 - Formulário de curso com seta de retorno para home, inputs iconizados, mensagens de ajuda e card lateral de dicas
-- Layout responsivo para desktop, tablet e mobile
+- Layout responsivo para desktop, tablet e mobile, com grids adaptáveis, navegação lateral compactada, formulários ajustados, listas empilhadas e calendário com rolagem interna controlada em telas estreitas
 - Estados de erro e carregamento tratados na UI
 - Uso consistente de ícones, espaçamentos, cards, feedback visual e hierarquia tipográfica
 

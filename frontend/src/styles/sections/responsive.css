@@ -21,14 +21,26 @@
   }
 
   .dashboard-nav {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    display: flex;
     gap: 8px;
     overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .dashboard-nav::-webkit-scrollbar {
+    display: none;
   }
 
   .dashboard-nav a {
-    justify-content: center;
+    flex: 0 0 auto;
+    justify-content: flex-start;
     min-width: 118px;
+    white-space: nowrap;
+  }
+
+  .dashboard-nav a svg {
+    flex: 0 0 auto;
   }
 
   .sidebar-promo {
@@ -116,6 +128,9 @@
   }
 
   .login-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: auto;
     padding: 14px;
     place-items: start center;
   }
@@ -123,6 +138,7 @@
   .login-shell {
     grid-template-columns: 1fr;
     gap: 28px;
+    height: auto;
     min-height: auto;
     padding: 24px;
     transform: none;
@@ -182,24 +198,70 @@
 }
 
 @media (max-width: 560px) {
-  .dashboard-sidebar {
-    padding: 14px;
+  .dashboard-app {
+    min-height: 100dvh;
   }
 
-  .dashboard-brand strong,
+  .dashboard-sidebar {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .dashboard-brand {
+    grid-template-columns: 40px 1fr;
+    gap: 8px;
+  }
+
+  .dashboard-brand img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard-brand strong {
+    font-size: 0.8rem;
+  }
+
   .dashboard-brand span {
-    display: none;
+    font-size: 0.54rem;
+  }
+
+  .dashboard-nav {
+    margin-inline: -4px;
+    padding-inline: 4px;
+    gap: 6px;
+  }
+
+  .dashboard-nav a {
+    min-width: 98px;
+    min-height: 38px;
+    gap: 6px;
+    padding: 7px 9px;
+    font-size: 0.72rem;
   }
 
   .dashboard-topbar {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
 
   .dashboard-user-actions {
-    width: 100%;
+    width: auto;
+    min-width: 0;
+    gap: 8px;
+  }
+
+  .dashboard-user-menu {
+    min-width: 0;
+    padding: 4px 6px 4px 4px;
+  }
+
+  .dashboard-avatar {
+    width: 34px;
+    height: 34px;
+    font-size: 0.76rem;
   }
 
   .dashboard-user-actions span {
+    max-width: 86px;
     min-width: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -208,10 +270,60 @@
 
   .dashboard-hero {
     flex-direction: column;
+    gap: 14px;
+    margin-bottom: 16px;
   }
 
-  .dashboard-hero .button {
-    width: 100%;
+  .dashboard-hero .button,
+  .calendar-new-course,
+  .calendar-header > .button,
+  .certificates-header > .button,
+  .lessons-header > .button,
+  .course-primary-action,
+  .course-secondary-action,
+  .button-danger {
+    min-height: 38px;
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .dashboard-hero h1,
+  .calendar-header h1,
+  .certificates-header h1,
+  .lessons-header h1,
+  .profile-header h1,
+  .course-detail-heading h1 {
+    font-size: 1.5rem;
+    line-height: 1.18;
+  }
+
+  .dashboard-hero p,
+  .calendar-header p,
+  .certificates-header p,
+  .lessons-header p,
+  .profile-header p,
+  .course-detail-description {
+    font-size: 0.88rem;
+  }
+
+  .dashboard-content {
+    width: min(100% - 20px, 1126px);
+    padding-top: 18px;
+  }
+
+  .dashboard-toolbar {
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .dashboard-actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .dashboard-filter-button {
+    min-height: 42px;
+    justify-content: center;
   }
 
   .metrics-panel,
@@ -227,6 +339,7 @@
   .profile-header {
     align-items: stretch;
     grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   .calendar-header > .button,
@@ -234,16 +347,36 @@
   .lessons-header > .button {
     grid-column: 1;
     grid-row: auto;
-    justify-self: stretch;
+    justify-self: start;
   }
 
   .certificates-toolbar,
   .lessons-toolbar {
     grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .calendar-layout,
+  .certificates-layout,
+  .lessons-layout,
+  .profile-layout,
+  .course-detail-layout,
+  .course-form-layout {
+    gap: 14px;
+  }
+
+  .certificate-metric,
+  .lesson-metric,
+  .profile-metric,
+  .metric-card {
+    min-height: auto;
+    padding: 14px;
   }
 
   .certificate-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
   }
 
   .certificate-preview,
@@ -258,31 +391,42 @@
 
   .lesson-library-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
   }
 
   .lesson-library-actions {
     grid-column: auto;
+    justify-content: stretch;
   }
 
   .lesson-library-actions a {
     flex: 1 1 150px;
+    justify-content: center;
   }
 
   .dashboard-course-footer {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto;
+    row-gap: 8px;
   }
 
   .dashboard-course-footer svg {
     display: none;
   }
 
+  .dashboard-course-footer small:first-of-type {
+    grid-column: 1 / -1;
+  }
+
   .course-form-header {
+    align-items: start;
+    grid-template-columns: 1fr;
     gap: 14px;
   }
 
   .back-home-button {
-    width: 38px;
-    height: 38px;
+    width: 34px;
+    height: 34px;
   }
 
   .course-form-header h1 {
@@ -290,8 +434,19 @@
   }
 
   .course-form-card,
-  .course-tips-card {
-    padding: 24px;
+  .course-tips-card,
+  .course-main-panel,
+  .course-side-panel,
+  .calendar-panel,
+  .calendar-side-panel > section,
+  .certificates-list-panel,
+  .certificates-side-panel > section,
+  .lessons-list-panel,
+  .lessons-side-panel > section,
+  .profile-card,
+  .profile-main-panel,
+  .profile-activity-card {
+    padding: 18px;
   }
 
   .course-date-grid {
@@ -301,18 +456,38 @@
 
   .course-form-actions,
   .course-form-actions .button {
-    width: 100%;
+    width: auto;
+  }
+
+  .calendar-panel {
+    overflow-x: auto;
+    scrollbar-width: thin;
   }
 
   .calendar-grid {
-    overflow-x: auto;
-    grid-template-columns: repeat(7, minmax(128px, 1fr));
+    min-width: 720px;
+    grid-template-columns: repeat(7, minmax(96px, 1fr));
+  }
+
+  .calendar-day {
+    min-height: 82px;
+    padding: 10px;
+  }
+
+  .calendar-event {
+    max-width: 100%;
+    font-size: 0.66rem;
   }
 
   .course-tabs {
     gap: 18px;
     overflow-x: auto;
     padding-inline: 18px;
+    scrollbar-width: none;
+  }
+
+  .course-tabs::-webkit-scrollbar {
+    display: none;
   }
 
   .course-lessons-toolbar,
@@ -320,16 +495,35 @@
     padding-inline: 18px;
   }
 
+  .course-lessons-content {
+    min-height: 360px;
+  }
+
+  .course-lesson-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .course-lesson-row-actions {
+    justify-content: stretch;
+  }
+
+  .course-lesson-row-actions button {
+    flex: 1;
+  }
+
   .course-instructor-card {
     padding: 22px;
   }
 
   .calendar-header {
-    flex-direction: column;
+    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
   .calendar-new-course {
-    width: 100%;
+    width: fit-content;
   }
 
   .content {
@@ -351,13 +545,19 @@
   }
 
   .login-shell {
+    gap: 14px;
     border-radius: 16px;
-    padding: 18px;
+    padding: 14px;
+  }
+
+  .login-showcase {
+    gap: 12px;
   }
 
   .login-card {
     border-radius: 16px;
-    padding: 24px;
+    gap: 14px;
+    padding: 18px;
   }
 
   .login-brand-lockup img {
@@ -378,12 +578,13 @@
   }
 
   .login-copy p {
-    margin-top: 14px;
-    font-size: 0.9rem;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    line-height: 1.45;
   }
 
   .login-benefits {
-    grid-template-columns: 1fr;
+    display: none;
   }
 
   .login-benefit {
@@ -397,7 +598,15 @@
   }
 
   .login-heading h2 {
-    font-size: 1.4rem;
+    font-size: 1.22rem;
+  }
+
+  .login-heading p {
+    font-size: 0.78rem;
+  }
+
+  .login-form label {
+    font-size: 0.82rem;
   }
 
   .label-row {
@@ -407,10 +616,185 @@
   }
 
   .input-icon {
-    min-height: 54px;
+    min-height: 48px;
   }
 
   .input-icon input {
-    height: 52px;
+    height: 46px;
+  }
+
+  .login-submit,
+  .google-button {
+    min-height: 46px;
+    font-size: 0.84rem;
+  }
+
+  .auth-divider {
+    gap: 10px;
+  }
+
+  .login-register {
+    font-size: 0.82rem;
+  }
+
+  .register-page {
+    height: auto;
+    min-height: 100dvh;
+    overflow: auto;
+    padding: 16px;
+    place-items: start center;
+  }
+
+  .register-brand {
+    position: static;
+    width: min(100%, 440px);
+    margin: 0 auto 14px;
+    grid-template-columns: 42px 1fr;
+  }
+
+  .register-brand img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .register-brand strong {
+    font-size: 0.88rem;
+  }
+
+  .register-brand span {
+    font-size: 0.56rem;
+  }
+
+  .register-card {
+    width: min(100%, 440px);
+    max-height: none;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .register-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .register-heading h1 {
+    font-size: 1.45rem;
+  }
+
+  .password-tip {
+    align-items: start;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .dashboard-sidebar {
+    padding: 10px;
+  }
+
+  .dashboard-brand {
+    grid-template-columns: 36px 1fr;
+  }
+
+  .dashboard-brand img {
+    width: 36px;
+    height: 36px;
+  }
+
+  .dashboard-nav a {
+    min-width: 92px;
+    padding-inline: 8px;
+    font-size: 0.7rem;
+  }
+
+  .dashboard-content {
+    width: min(100% - 16px, 1126px);
+    padding-top: 14px;
+  }
+
+  .dashboard-user-actions span {
+    display: none;
+  }
+
+  .dashboard-hero h1,
+  .calendar-header h1,
+  .certificates-header h1,
+  .lessons-header h1,
+  .profile-header h1,
+  .course-detail-heading h1 {
+    font-size: 1.36rem;
+  }
+
+  .search-box,
+  .search-field,
+  .course-input-shell,
+  .input-icon {
+    min-width: 0;
+  }
+
+  .course-form-card,
+  .course-tips-card,
+  .course-main-panel,
+  .course-side-panel,
+  .calendar-panel,
+  .calendar-side-panel > section,
+  .certificates-list-panel,
+  .certificates-side-panel > section,
+  .lessons-list-panel,
+  .lessons-side-panel > section,
+  .profile-card,
+  .profile-main-panel,
+  .profile-activity-card {
+    padding: 14px;
+  }
+
+  .certificate-row-actions,
+  .lesson-library-actions,
+  .course-lesson-row-actions {
+    flex-direction: column;
+  }
+
+  .certificate-row-actions button,
+  .lesson-library-actions a,
+  .course-lesson-row-actions button {
+    width: 100%;
+  }
+
+  .login-page {
+    padding: 10px;
+  }
+
+  .login-shell {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .login-card {
+    padding: 16px;
+  }
+
+  .login-brand-lockup {
+    gap: 10px;
+  }
+
+  .login-brand-lockup img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .login-copy h1 {
+    font-size: 1.34rem;
+  }
+
+  .login-copy p {
+    font-size: 0.76rem;
+  }
+
+  .register-page {
+    padding: 10px;
+  }
+
+  .register-card {
+    padding: 16px;
   }
 }
