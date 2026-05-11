@@ -1,0 +1,245 @@
+.lessons-page {
+  display: grid;
+  gap: 22px;
+}
+
+.lessons-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 20px;
+  align-items: flex-start;
+}
+
+.lessons-header h1 {
+  margin-top: 8px;
+  color: #0b1748;
+  font-size: 1.8rem;
+}
+
+.lessons-header p {
+  margin-top: 6px;
+  max-width: 660px;
+  color: #53617f;
+}
+
+.lessons-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lesson-metric {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 13px;
+  align-items: center;
+  border: 1px solid rgba(224, 227, 241, 0.9);
+  border-radius: 8px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 16px 42px rgba(31, 36, 86, 0.07);
+  backdrop-filter: blur(16px);
+}
+
+.lesson-metric > span {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(116, 84, 245, 0.12);
+  color: #6247ff;
+}
+
+.lesson-metric div {
+  display: grid;
+  gap: 3px;
+}
+
+.lesson-metric strong {
+  color: #0b1748;
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.lesson-metric small {
+  color: #53617f;
+  font-size: 0.8rem;
+}
+
+.lessons-toolbar {
+  display: grid;
+  grid-template-columns: minmax(260px, 1fr) 232px;
+  gap: 18px;
+  align-items: center;
+  max-width: 920px;
+}
+
+.lessons-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 330px;
+  gap: 26px;
+  align-items: start;
+}
+
+.lessons-list-panel,
+.lessons-side-panel > section {
+  border: 1px solid rgba(224, 227, 241, 0.9);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 48px rgba(31, 36, 86, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.lessons-list-panel {
+  overflow: hidden;
+}
+
+.lesson-library-row {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  min-height: 104px;
+  border-bottom: 1px solid rgba(224, 227, 241, 0.88);
+  padding: 18px 22px;
+}
+
+.lesson-library-row:last-of-type {
+  border-bottom: 0;
+}
+
+.lesson-thumbnail {
+  position: relative;
+  display: grid;
+  width: 64px;
+  height: 64px;
+  place-items: center;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(98, 71, 255, 0.14), rgba(255, 154, 205, 0.17));
+  color: #6247ff;
+}
+
+.lesson-thumbnail span {
+  position: absolute;
+  right: 8px;
+  bottom: 6px;
+  color: rgba(11, 23, 72, 0.42);
+  font-size: 0.68rem;
+}
+
+.lesson-library-content {
+  display: grid;
+  gap: 8px;
+  min-width: 0;
+}
+
+.lesson-library-content > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.lesson-library-content h2 {
+  overflow: hidden;
+  color: #0b1748;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.lesson-library-content p {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #53617f;
+  font-size: 0.84rem;
+}
+
+.lesson-library-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.lesson-library-actions a {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  border: 1px solid #dfe4ee;
+  border-radius: 8px;
+  padding: 0 14px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #0b1748;
+  font-size: 0.8rem;
+}
+
+.lesson-library-actions a svg {
+  color: #6247ff;
+}
+
+.lessons-side-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.lessons-side-panel > section {
+  display: grid;
+  gap: 18px;
+  padding: 24px;
+}
+
+.lessons-side-panel h2 {
+  color: #0b1748;
+  font-size: 1.02rem;
+}
+
+.lessons-side-panel ul {
+  display: grid;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.lessons-side-panel li {
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 10px;
+  color: #53617f;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.lessons-side-panel li svg {
+  color: #6247ff;
+}
+
+.lessons-calendar-card {
+  background: linear-gradient(135deg, rgba(116, 84, 245, 0.11), rgba(255, 255, 255, 0.76));
+}
+
+.lessons-calendar-card > svg {
+  color: #6247ff;
+}
+
+.lessons-calendar-card strong {
+  color: #0b1748;
+}
+
+.lessons-calendar-card p {
+  color: #53617f;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.lessons-calendar-card a {
+  display: inline-flex;
+  width: fit-content;
+  color: #6247ff;
+  font-size: 0.86rem;
+}
+

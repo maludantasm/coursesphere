@@ -1,0 +1,30 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    environment:
+      NODE_ENV: production
+      PORT: 3333
+      FRONTEND_ORIGIN: http://localhost:5173
+      JWT_SECRET: change-this-secret-before-deploy
+      JWT_EXPIRES_IN: 7d
+      DATA_FILE: .data/coursesphere.json
+    ports:
+      - "3333:3333"
+    volumes:
+      - backend_data:/app/backend/.data
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+      args:
+        VITE_API_URL: http://localhost:3333/api
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+
+volumes:
+  backend_data:

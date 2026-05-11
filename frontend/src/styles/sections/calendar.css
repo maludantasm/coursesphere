@@ -1,0 +1,239 @@
+.calendar-page {
+  display: grid;
+  gap: 14px;
+}
+
+.calendar-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px 20px;
+  align-items: flex-start;
+}
+
+.calendar-title-group {
+  display: grid;
+  grid-column: 1;
+  gap: 12px;
+  justify-items: start;
+}
+
+.calendar-title-group .back-home-button {
+  grid-column: 1 / -1;
+}
+
+.calendar-title-group > div {
+  grid-row: 2;
+}
+
+.calendar-header > .button,
+.certificates-header > .button,
+.lessons-header > .button {
+  grid-column: 2;
+  grid-row: 2;
+  align-self: start;
+  justify-self: end;
+}
+
+.calendar-eyebrow {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  color: #6247ff;
+  font-size: 0.8rem;
+}
+
+.calendar-header h1 {
+  margin-top: 5px;
+  color: #0b1748;
+  font-size: 1.55rem;
+}
+
+.calendar-header p {
+  margin-top: 4px;
+  max-width: 620px;
+  color: #53617f;
+  font-size: 0.9rem;
+}
+
+.calendar-new-course {
+  min-height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #5d4df4, #8b61f6);
+  font-size: 0.82rem;
+  font-weight: 400;
+}
+
+.calendar-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 18px;
+  align-items: start;
+}
+
+.calendar-panel,
+.calendar-side-panel > section {
+  border: 1px solid rgba(224, 227, 241, 0.9);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 48px rgba(31, 36, 86, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.calendar-month-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(224, 227, 241, 0.9);
+  padding: 11px 16px;
+}
+
+.calendar-month-bar strong {
+  color: #0b1748;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+}
+
+.calendar-month-bar button {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid #dfe4ee;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+  color: #53617f;
+  cursor: pointer;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekday {
+  padding: 8px 8px;
+  color: #53617f;
+  font-size: 0.72rem;
+  text-align: center;
+}
+
+.calendar-day {
+  display: grid;
+  align-content: start;
+  gap: 5px;
+  min-height: clamp(58px, 7.5vh, 78px);
+  border-top: 1px solid rgba(224, 227, 241, 0.75);
+  border-left: 1px solid rgba(224, 227, 241, 0.75);
+  padding: 7px;
+  color: #0b1748;
+}
+
+.calendar-day:nth-child(7n + 1) {
+  border-left: 0;
+}
+
+.calendar-day.muted {
+  color: #a5aec2;
+  background: rgba(247, 248, 252, 0.48);
+}
+
+.calendar-day > span {
+  font-size: 0.74rem;
+}
+
+.calendar-day > div {
+  display: grid;
+  gap: 4px;
+}
+
+.calendar-event {
+  overflow: hidden;
+  border-radius: 6px;
+  padding: 4px 6px;
+  background: rgba(98, 71, 255, 0.1);
+  color: #6247ff;
+  font-size: 0.66rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-day small {
+  color: #53617f;
+  font-size: 0.64rem;
+}
+
+.calendar-side-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.calendar-side-panel > section {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.calendar-side-panel h2 {
+  color: #0b1748;
+  font-size: 0.94rem;
+}
+
+.calendar-upcoming-list {
+  display: grid;
+  gap: 8px;
+}
+
+.calendar-upcoming-item {
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 10px;
+  align-items: center;
+  border-radius: 8px;
+  padding: 8px;
+  background: rgba(116, 84, 245, 0.06);
+}
+
+.calendar-upcoming-item > span {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 50%;
+  background: #eee8ff;
+  color: #6247ff;
+}
+
+.calendar-upcoming-item div {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.calendar-upcoming-item strong {
+  overflow: hidden;
+  color: #0b1748;
+  font-size: 0.8rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.calendar-upcoming-item small {
+  color: #53617f;
+  font-size: 0.68rem;
+}
+
+.calendar-summary-card strong {
+  color: #6247ff;
+  font-size: 1.45rem;
+  line-height: 1;
+}
+
+.calendar-summary-card span {
+  color: #0b1748;
+}
+
+.calendar-summary-card p {
+  color: #53617f;
+  font-size: 0.78rem;
+}
+

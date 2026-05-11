@@ -1,0 +1,416 @@
+@media (max-width: 860px) {
+  .dashboard-app {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-sidebar {
+    position: static;
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+    height: auto;
+    padding: 18px;
+  }
+
+  .dashboard-brand {
+    grid-template-columns: 46px 1fr;
+  }
+
+  .dashboard-brand img {
+    width: 46px;
+    height: 46px;
+  }
+
+  .dashboard-nav {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .dashboard-nav a {
+    justify-content: center;
+    min-width: 118px;
+  }
+
+  .sidebar-promo {
+    display: none;
+  }
+
+  .dashboard-topbar {
+    width: 100%;
+    margin: 0;
+    min-height: auto;
+    padding: 0;
+  }
+
+  .dashboard-content {
+    width: min(100% - 28px, 1126px);
+    padding-top: 26px;
+  }
+
+  .dashboard-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .metrics-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .dashboard-course-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .course-form-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .course-detail-header,
+  .course-detail-layout,
+  .calendar-layout,
+  .certificates-layout,
+  .lessons-layout,
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-row {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+
+  .certificate-row .certificate-status,
+  .certificate-row-actions {
+    grid-column: 2;
+  }
+
+  .certificate-row-actions {
+    flex-wrap: wrap;
+  }
+
+  .lesson-library-row {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .lesson-library-actions {
+    grid-column: 2;
+    flex-wrap: wrap;
+  }
+
+  .course-edit-button {
+    width: fit-content;
+  }
+
+  .course-lessons-toolbar {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .lesson-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-tips-card {
+    order: -1;
+  }
+
+  .topbar {
+    grid-template-columns: 1fr auto;
+  }
+
+  .login-page {
+    padding: 14px;
+    place-items: start center;
+  }
+
+  .login-shell {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    min-height: auto;
+    padding: 24px;
+    transform: none;
+  }
+
+  .login-showcase {
+    grid-template-rows: auto;
+    gap: 24px;
+  }
+
+  .login-copy {
+    align-self: auto;
+  }
+
+  .login-copy h1 {
+    font-size: 1.9rem;
+  }
+
+  .login-benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    max-width: none;
+    gap: 12px;
+  }
+
+  .login-benefit {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 10px;
+  }
+
+  .login-card {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  .nav {
+    order: 3;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+  }
+
+  .detail-layout,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .page-header,
+  .section-title,
+  .lesson-item {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .side-panel {
+    order: -1;
+  }
+}
+
+@media (max-width: 560px) {
+  .dashboard-sidebar {
+    padding: 14px;
+  }
+
+  .dashboard-brand strong,
+  .dashboard-brand span {
+    display: none;
+  }
+
+  .dashboard-topbar {
+    justify-content: flex-start;
+  }
+
+  .dashboard-user-actions {
+    width: 100%;
+  }
+
+  .dashboard-user-actions span {
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .dashboard-hero {
+    flex-direction: column;
+  }
+
+  .dashboard-hero .button {
+    width: 100%;
+  }
+
+  .metrics-panel,
+  .dashboard-course-grid,
+  .certificates-metrics,
+  .lessons-metrics,
+  .profile-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .certificates-header,
+  .lessons-header,
+  .profile-header {
+    align-items: stretch;
+    grid-template-columns: 1fr;
+  }
+
+  .calendar-header > .button,
+  .certificates-header > .button,
+  .lessons-header > .button {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: stretch;
+  }
+
+  .certificates-toolbar,
+  .lessons-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-row {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-preview,
+  .certificate-row .certificate-status,
+  .certificate-row-actions {
+    grid-column: auto;
+  }
+
+  .certificate-row-actions button:not(.certificate-more-button) {
+    flex: 1 1 150px;
+  }
+
+  .lesson-library-row {
+    grid-template-columns: 1fr;
+  }
+
+  .lesson-library-actions {
+    grid-column: auto;
+  }
+
+  .lesson-library-actions a {
+    flex: 1 1 150px;
+  }
+
+  .dashboard-course-footer {
+    grid-template-columns: auto 1fr auto;
+  }
+
+  .dashboard-course-footer svg {
+    display: none;
+  }
+
+  .course-form-header {
+    gap: 14px;
+  }
+
+  .back-home-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .course-form-header h1 {
+    font-size: 1.55rem;
+  }
+
+  .course-form-card,
+  .course-tips-card {
+    padding: 24px;
+  }
+
+  .course-date-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .course-form-actions,
+  .course-form-actions .button {
+    width: 100%;
+  }
+
+  .calendar-grid {
+    overflow-x: auto;
+    grid-template-columns: repeat(7, minmax(128px, 1fr));
+  }
+
+  .course-tabs {
+    gap: 18px;
+    overflow-x: auto;
+    padding-inline: 18px;
+  }
+
+  .course-lessons-toolbar,
+  .course-lessons-content {
+    padding-inline: 18px;
+  }
+
+  .course-instructor-card {
+    padding: 22px;
+  }
+
+  .calendar-header {
+    flex-direction: column;
+  }
+
+  .calendar-new-course {
+    width: 100%;
+  }
+
+  .content {
+    width: min(100% - 24px, 1180px);
+    padding-top: 20px;
+  }
+
+  .topbar {
+    padding-inline: 12px;
+  }
+
+  .brand span,
+  .user-menu span {
+    display: none;
+  }
+
+  .auth-panel {
+    padding: 24px;
+  }
+
+  .login-shell {
+    border-radius: 16px;
+    padding: 18px;
+  }
+
+  .login-card {
+    border-radius: 16px;
+    padding: 24px;
+  }
+
+  .login-brand-lockup img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .login-brand-lockup strong {
+    font-size: 0.95rem;
+  }
+
+  .login-brand-lockup span {
+    font-size: 0.66rem;
+  }
+
+  .login-copy h1 {
+    font-size: 1.62rem;
+  }
+
+  .login-copy p {
+    margin-top: 14px;
+    font-size: 0.9rem;
+  }
+
+  .login-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  .login-benefit {
+    grid-template-columns: 48px 1fr;
+  }
+
+  .login-benefit > span {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .login-heading h2 {
+    font-size: 1.4rem;
+  }
+
+  .label-row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .input-icon {
+    min-height: 54px;
+  }
+
+  .input-icon input {
+    height: 52px;
+  }
+}

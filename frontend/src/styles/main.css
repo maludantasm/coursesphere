@@ -1,0 +1,12 @@
+@import "./sections/base.css";
+@import "./sections/login.css";
+@import "./sections/register.css";
+@import "./sections/dashboard.css";
+@import "./sections/course-form.css";
+@import "./sections/course-detail.css";
+@import "./sections/calendar.css";
+@import "./sections/certificates.css";
+@import "./sections/lessons.css";
+@import "./sections/profile.css";
+@import "./sections/legacy.css";
+@import "./sections/responsive.css";

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.env
+.env.local
+.data/
+backend/.data/
+frontend/.vite/
+npm-debug.log*
+.DS_Store
